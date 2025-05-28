@@ -1,0 +1,49 @@
+# Django核心框架
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+
+# JWT认证
+djangorestframework-simplejwt==5.3.0
+
+# 缓存 (开发环境不强制要求Redis)
+redis==4.6.0
+django-redis==5.4.0
+
+# 文件处理
+Pillow==10.0.1
+
+# 条形码生成 - 专门为Code128
+python-barcode==0.14.0
+qrcode==7.4.2
+
+# API文档
+drf-yasg==1.21.7
+
+# 数据处理
+pandas==2.1.1
+numpy==1.24.3
+openpyxl==3.1.2
+
+# 任务队列 (可选)
+celery==5.3.2
+django-celery-beat==2.5.0
+django-celery-results==2.5.1
+
+# 工具库
+python-dotenv==1.0.0
+requests==2.31.0
+python-dateutil==2.8.2
+
+# 开发工具
+django-debug-toolbar==4.2.0
+django-extensions==3.2.3
+
+# WebSocket支持
+channels==4.0.0
+channels-redis==4.1.0
+
+# 过滤器
+django-filter==23.2
+
+# 简化依赖 - SQLite无需额外数据库驱动

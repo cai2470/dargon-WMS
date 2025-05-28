@@ -1,0 +1,450 @@
+// 移动端专用样式
+@media (max-width: 768px) {
+  // 全局移动端样式
+  html {
+    font-size: 14px;
+  }
+
+  body {
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+
+  // 移动端布局
+  .mobile-layout {
+    height: 100vh;
+    overflow: hidden;
+    
+    .mobile-header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: #409EFF;
+      color: white;
+      height: 44px;
+      
+      .header-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        height: 100%;
+        
+        .header-left {
+          display: flex;
+          align-items: center;
+          
+          .menu-btn {
+            margin-right: 10px;
+            font-size: 18px;
+            cursor: pointer;
+          }
+          
+          .title {
+            font-size: 16px;
+            font-weight: 500;
+          }
+        }
+        
+        .header-right {
+          .user-btn {
+            font-size: 18px;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+    
+    .mobile-content {
+      padding-top: 44px;
+      padding-bottom: 50px;
+      height: 100vh;
+      overflow-y: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    
+    .mobile-tabbar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: white;
+      border-top: 1px solid #e4e7ed;
+      height: 50px;
+      display: flex;
+      
+      .tab-item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: #909399;
+        font-size: 12px;
+        cursor: pointer;
+        transition: color 0.3s;
+        
+        &.active {
+          color: #409EFF;
+        }
+        
+        .icon {
+          font-size: 18px;
+          margin-bottom: 2px;
+        }
+      }
+    }
+  }
+
+  // Element Plus 移动端优化
+  .el-button {
+    padding: 8px 15px;
+    font-size: 14px;
+    
+    &.el-button--large {
+      padding: 10px 20px;
+      font-size: 16px;
+    }
+    
+    &.el-button--small {
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+
+  .el-input {
+    .el-input__inner {
+      height: 40px;
+      line-height: 40px;
+      font-size: 16px; // 防止iOS缩放
+    }
+    
+    &.el-input--large .el-input__inner {
+      height: 44px;
+      line-height: 44px;
+    }
+    
+    &.el-input--small .el-input__inner {
+      height: 32px;
+      line-height: 32px;
+      font-size: 14px;
+    }
+  }
+
+  .el-select {
+    .el-input__inner {
+      font-size: 16px; // 防止iOS缩放
+    }
+  }
+
+  .el-table {
+    font-size: 12px;
+    
+    .el-table__header th {
+      padding: 8px 0;
+      font-size: 12px;
+    }
+    
+    .el-table__body td {
+      padding: 8px 0;
+      font-size: 12px;
+    }
+  }
+
+  .el-card {
+    margin: 10px;
+    
+    .el-card__header {
+      padding: 15px;
+      font-size: 16px;
+    }
+    
+    .el-card__body {
+      padding: 15px;
+    }
+  }
+
+  .el-dialog {
+    width: 90% !important;
+    margin: 5vh auto !important;
+    
+    .el-dialog__header {
+      padding: 15px;
+    }
+    
+    .el-dialog__body {
+      padding: 15px;
+    }
+    
+    .el-dialog__footer {
+      padding: 15px;
+    }
+  }
+
+  .el-drawer {
+    .el-drawer__header {
+      padding: 15px;
+      margin-bottom: 0;
+    }
+    
+    .el-drawer__body {
+      padding: 15px;
+    }
+  }
+
+  .el-form {
+    .el-form-item {
+      margin-bottom: 15px;
+    }
+    
+    .el-form-item__label {
+      line-height: 32px;
+      font-size: 14px;
+    }
+  }
+
+  // 触摸优化
+  .touch-item {
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    
+    &:active {
+      background-color: #f5f5f5;
+    }
+  }
+
+  // 扫码界面优化
+  .scanner-container {
+    position: relative;
+    height: 100%;
+    
+    .scanner-viewport {
+      position: relative;
+      width: 100%;
+      height: 60%;
+      background: #000;
+      overflow: hidden;
+      
+      video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .scanner-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+        .scan-frame {
+          width: 200px;
+          height: 200px;
+          border: 2px solid #409EFF;
+          border-radius: 8px;
+          position: relative;
+          
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 3px solid #409EFF;
+          }
+          
+          &::before {
+            top: -3px;
+            left: -3px;
+            border-right: none;
+            border-bottom: none;
+          }
+          
+          &::after {
+            bottom: -3px;
+            right: -3px;
+            border-left: none;
+            border-top: none;
+          }
+        }
+      }
+    }
+    
+    .scanner-controls {
+      padding: 20px;
+      background: white;
+      
+      .scan-result {
+        margin-bottom: 15px;
+        padding: 10px;
+        background: #f0f9ff;
+        border-radius: 4px;
+        
+        .result-text {
+          font-size: 14px;
+          color: #303133;
+          margin-bottom: 5px;
+        }
+        
+        .result-code {
+          font-family: monospace;
+          font-size: 16px;
+          color: #409EFF;
+          font-weight: bold;
+        }
+      }
+      
+      .control-buttons {
+        display: flex;
+        gap: 10px;
+        
+        .el-button {
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  // 列表优化
+  .mobile-list {
+    .list-item {
+      background: white;
+      margin-bottom: 8px;
+      padding: 15px;
+      border-radius: 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      
+      .item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        
+        .item-title {
+          font-size: 16px;
+          font-weight: 500;
+          color: #303133;
+        }
+        
+        .item-status {
+          padding: 2px 8px;
+          border-radius: 12px;
+          font-size: 12px;
+          
+          &.success {
+            background: #f0f9ff;
+            color: #67c23a;
+          }
+          
+          &.warning {
+            background: #fdf6ec;
+            color: #e6a23c;
+          }
+          
+          &.danger {
+            background: #fef0f0;
+            color: #f56c6c;
+          }
+        }
+      }
+      
+      .item-content {
+        .item-row {
+          display: flex;
+          justify-content: space-between;
+          margin-bottom: 4px;
+          font-size: 14px;
+          
+          .label {
+            color: #909399;
+          }
+          
+          .value {
+            color: #303133;
+            font-weight: 500;
+          }
+        }
+      }
+      
+      .item-actions {
+        margin-top: 10px;
+        display: flex;
+        gap: 8px;
+        
+        .el-button {
+          flex: 1;
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  // 统计卡片
+  .stat-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin: 10px;
+    
+    .stat-card {
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      
+      .stat-value {
+        font-size: 24px;
+        font-weight: bold;
+        color: #409EFF;
+        margin-bottom: 5px;
+      }
+      
+      .stat-label {
+        font-size: 12px;
+        color: #909399;
+      }
+    }
+  }
+}
+
+// 横屏优化
+@media (max-width: 768px) and (orientation: landscape) {
+  .scanner-container {
+    .scanner-viewport {
+      height: 80%;
+    }
+    
+    .scanner-controls {
+      padding: 10px 20px;
+    }
+  }
+  
+  .mobile-layout {
+    .mobile-content {
+      padding-bottom: 40px;
+    }
+    
+    .mobile-tabbar {
+      height: 40px;
+      
+      .tab-item {
+        font-size: 11px;
+        
+        .icon {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "xiaoshenlong-wms-frontend",
+  "version": "1.0.0",
+  "description": "小神龙仓库管理系统前端",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.1.0",
+    "axios": "^1.5.0",
+    "dayjs": "^1.11.9",
+    "echarts": "^5.4.3",
+    "element-plus": "^2.3.9",
+    "js-cookie": "^3.0.5",
+    "jsbarcode": "^3.11.6",
+    "lodash": "^4.17.21",
+    "nprogress": "^0.2.0",
+    "pinia": "^2.1.6",
+    "quagga": "^0.12.1",
+    "vue": "^3.3.4",
+    "vue-echarts": "^6.6.1",
+    "vue-qr": "^4.0.9",
+    "vue-router": "^4.2.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.3.4",
+    "@vue/eslint-config-prettier": "^8.0.0",
+    "eslint": "^8.47.0",
+    "prettier": "^3.0.2",
+    "sass": "^1.77.0",
+    "unplugin-auto-import": "^0.16.6",
+    "unplugin-vue-components": "^0.25.2",
+    "vite": "^4.4.9"
+  }
+}
